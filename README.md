@@ -16,15 +16,15 @@ The data is collected using two primary inertial measurement units (IMUs):
 3. **Metadata & Naming Convention**
 Each file follows a strict naming convention that acts as a primary source for automated data labeling. The metadata is encoded as follows:
 [Participant]-[Label]-[Category][SetNumber]-[SensorType].csv
-**Participants**: 5 distinct individuals (Identified as A, B, C, D, E).
-**Activity Labels**:
-  - bench: Bench Press
-  - squat: Squat
-  - ohp: Overhead Press
-  - dead: Deadlift
-  - row: Barbell Row
-  - rest: Stationary/Non-active period.
-**Categories (Intensity)**:
+- **Participants**: 5 distinct individuals (Identified as A, B, C, D, E).
+- **Activity Labels**:
+    - bench: Bench Press
+    - squat: Squat
+    - ohp: Overhead Press
+    - dead: Deadlift
+    - row: Barbell Row
+    - rest: Stationary/Non-active period.
+- **Categories (Intensity)**:
     - Heavy Set: High-intensity sessions containing 5 repetitions.
     - Medium Set: Moderate-intensity sessions containing 10 repetitions.
 **Set Number**: Tracks the sequence of sets for the same exercise.
