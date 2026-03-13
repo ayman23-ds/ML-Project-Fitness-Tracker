@@ -61,33 +61,28 @@ Benefit: This reduced temporal misalignment and created a computationally effici
 After processing, the final unified dataset consists of 9,009 rows and 10 columns.
 
 A. Class Distribution (Target Balance)
-The dataset shows a healthy balance across all 6 activity classes:
-| Exercise | Samples |
-| :--- | :--- |
-| OHP (Overhead Press) | 1,676 |
-| Bench Press | 1,665 |
-| Squat | 1,610 |
-| Deadlift | 1,531 |
-| Row | 1,417 |
-| Rest | 1,110 |
+   The dataset shows a healthy balance across all 6 activity classes:
+   | Exercise | Samples |
+   | :--- | :--- |
+   | OHP (Overhead Press) | 1,676 |
+   | Bench Press | 1,665 |
+   | Squat | 1,610 |
+   | Deadlift | 1,531 |
+   | Row | 1,417 |
+   | Rest | 1,110 |
 
 B. Participant Distribution
-Data is spread across 5 participants, ensuring the model generalizes well beyond a single individual:
-
-Participant A: 2,988 samples
-
-Participant E: 2,645 samples
-
-Participant C: 1,481 samples
-
-Participant D: 1,052 samples
-
-Participant B: 843 samples
+   Data is spread across 5 participants, ensuring the model generalizes well beyond a single individual:
+   Participant A: 2,988 samples
+   Participant E: 2,645 samples
+   Participant C: 1,481 samples
+   Participant D: 1,052 samples
+   Participant B: 843 samples
 
 4. Data Quality Assurance
-A final integrity check confirmed that the dataset is clean and ready for modeling:
-   - Missing Values (NaNs): 0 across all columns.
-   - Feature Set: acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z, participant, label, category, set.
+   A final integrity check confirmed that the dataset is clean and ready for modeling:
+      - Missing Values (NaNs): 0 across all columns.
+      - Feature Set: acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z, participant, label, category, set.
 
 
 
