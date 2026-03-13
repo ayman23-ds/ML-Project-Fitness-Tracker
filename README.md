@@ -11,8 +11,8 @@ This project aims to build a complete machine learning pipeline. The process beg
 The dataset comprises **187 raw CSV files** generated from **MetaMotion wearable sensors**. It captures high-resolution movement data across various resistance training exercises, designed for activity recognition and repetition counting tasks.
 2. **Sensor Specifications**
 The data is collected using two primary inertial measurement units (IMUs):
-* 3-Axis Accelerometer: Captures linear acceleration in $g$ units ($x, y, z$ axes) at a frequency of 12.5Hz.
-* 3-Axis Gyroscope: Captures angular velocity in $deg/s$ ($x, y, z$ axes) at a frequency of 25Hz.
+    * 3-Axis Accelerometer: Captures linear acceleration in $g$ units ($x, y, z$ axes) at a frequency of 12.5Hz.
+    * 3-Axis Gyroscope: Captures angular velocity in $deg/s$ ($x, y, z$ axes) at a frequency of 25Hz.
 3. **Metadata & Naming Convention**
 Each file follows a strict naming convention that acts as a primary source for automated data labeling. The metadata is encoded as follows:
 [Participant]-[Label]-[Category][SetNumber]-[SensorType].csv
