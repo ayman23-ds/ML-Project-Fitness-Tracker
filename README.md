@@ -6,7 +6,7 @@ This project aims to build a complete machine learning pipeline. The process beg
 
 ---
 
-## **Dataset : MetaMotion Physical Activity Analysis**
+## **Part 1: Dataset MetaMotion Physical Activity Analysis**
 1. **Overview**
 The dataset comprises **187 raw CSV files** generated from **MetaMotion wearable sensors**. It captures high-resolution movement data across various resistance training exercises, designed for activity recognition and repetition counting tasks.
 2. **Sensor Specifications**
