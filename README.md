@@ -57,7 +57,7 @@ To synchronize the sensors, the Accelerometer (12.5Hz) and Gyroscope (25Hz) data
    - Aggregation Method: Mean value was used for sensor axes to smooth out noise, while the "Last" value was kept for categorical labels.
 Benefit: This reduced temporal misalignment and created a computationally efficient dataset.
 
-3. Dataset Statistics
+3. **Dataset Statistics**
 After processing, the final unified dataset consists of 9,009 rows and 10 columns.
 
 A. Class Distribution (Target Balance)
@@ -86,10 +86,8 @@ Participant B: 843 samples
 
 4. Data Quality Assurance
 A final integrity check confirmed that the dataset is clean and ready for modeling:
-
-Missing Values (NaNs): 0 across all columns.
-
-Feature Set: acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z, participant, label, category, set.
+   - Missing Values (NaNs): 0 across all columns.
+   - Feature Set: acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z, participant, label, category, set.
 
 
 
