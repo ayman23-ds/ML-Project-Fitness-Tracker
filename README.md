@@ -72,11 +72,11 @@ A. Class Distribution (Target Balance)
 
 B. Participant Distribution
    Data is spread across 5 participants, ensuring the model generalizes well beyond a single individual:
-        - Participant A: 2,988 samples
-        - Participant E: 2,645 samples
-        - Participant C: 1,481 samples
-        - Participant D: 1,052 samples
-        - Participant B: 843 samples
+   - Participant A: 2,988 samples
+   - Participant E: 2,645 samples
+   - Participant C: 1,481 samples
+   - Participant D: 1,052 samples
+   - Participant B: 843 samples
 
 4. **Data Quality Assurance**
    A final integrity check confirmed that the dataset is clean and ready for modeling:
