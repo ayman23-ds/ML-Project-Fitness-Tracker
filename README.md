@@ -24,10 +24,10 @@ Each file follows a strict naming convention that acts as a primary source for a
   - dead: Deadlift
   - row: Barbell Row
   - rest: Stationary/Non-active period.
-  **Categories (Intensity)**:
+**Categories (Intensity)**:
     - Heavy Set: High-intensity sessions containing 5 repetitions.
     - Medium Set: Moderate-intensity sessions containing 10 repetitions.
-  **Set Number**: Tracks the sequence of sets for the same exercise.
+**Set Number**: Tracks the sequence of sets for the same exercise.
 4. **Data Features**
 Each record in the dataset contains the following features:
 - epoch (ms) | Unix timestamp in milliseconds
