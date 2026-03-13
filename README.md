@@ -62,14 +62,13 @@ Benefit: This reduced temporal misalignment and created a computationally effici
 
 A. Class Distribution (Target Balance)
    The dataset shows a healthy balance across all 6 activity classes:
-      | Exercise | Samples |
-      | :--- | :--- |
-      | OHP (Overhead Press) | 1,676 |
-      | Bench Press | 1,665 |
-      | Squat | 1,610 |
-      | Deadlift | 1,531 |
-      | Row | 1,417 |
-      | Rest | 1,110 |
+   - Exercise | Samples
+   - OHP (Overhead Press) | 1,676
+   - Bench Press | 1,665
+   - Squat | 1,610
+   - Deadlift | 1,531
+   - Row | 1,417
+   - Rest | 1,110
 
 B. Participant Distribution
    Data is spread across 5 participants, ensuring the model generalizes well beyond a single individual:
