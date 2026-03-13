@@ -33,12 +33,12 @@ Each file follows a strict naming convention that acts as a primary source for a
    - **Set Number**: Tracks the sequence of sets for the same exercise.
 4. **Data Features**
 Each record in the dataset contains the following features:
-- epoch (ms) | Unix timestamp in milliseconds
-- time | Formatted date and time | YYYY-MM-DDTHH:MM:SS ||
-- x-axis | Acceleration or Angular Velocity on X-axis | $g$ or $deg/s$ ||
-- y-axis | Acceleration or Angular Velocity on Y-axis | $g$ or $deg/s$ ||
-- z-axis | Acceleration or Angular Velocity on Z-axis | $g$ or $deg/s$ |
+   - epoch (ms) | Unix timestamp in milliseconds
+   - time | Formatted date and time | YYYY-MM-DDTHH:MM:SS ||
+   - x-axis | Acceleration or Angular Velocity on X-axis | $g$ or $deg/s$ ||
+   - y-axis | Acceleration or Angular Velocity on Y-axis | $g$ or $deg/s$ ||
+   - z-axis | Acceleration or Angular Velocity on Z-axis | $g$ or $deg/s$ |
 5. **Data Challenges & Objectives**
-- Multi-Frequency Handling: Synchronizing the 12.5Hz Accelerometer data with the 25Hz Gyroscope data.
-- Outlier Removal: Cleaning noise using statistical methods like Chauvenet’s Criterion.
-- Feature Engineering: Extracting meaningful patterns from raw temporal data using PCA and Frequency Domain analysis.
+   - Multi-Frequency Handling: Synchronizing the 12.5Hz Accelerometer data with the 25Hz Gyroscope data.
+   - Outlier Removal: Cleaning noise using statistical methods like Chauvenet’s Criterion.
+   - Feature Engineering: Extracting meaningful patterns from raw temporal data using PCA and Frequency Domain analysis.
