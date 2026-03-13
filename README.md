@@ -1,3 +1,6 @@
 # ML-Project-Fitness-Tracker
-**Description**   
+## **Description**   
 This project aims to building a complete machine learning pipeline. The process begins with reading, cleaning, and processing raw data from CSV files, then visualizing it as time series data to understand its underlying patterns. Next, advanced outlier detection techniques, such as Chauvenet's criterion and Local Outlier Factor (LOF), are applied. This is followed by a comprehensive feature engineering phase using low-pass filters, Principal Component Analysis (PCA), and clustering. For predictive modeling, several algorithms—including Naive Bayes, SVMs, Random Forests, and Neural Networks—are trained and compared to achieve high accuracy. Finally, the project concludes by developing a custom algorithm to automatically and accurately count movement repetitions.
+--
+
+## **Dataset : MetaMotion Physical Activity Analysis**
