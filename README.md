@@ -88,17 +88,18 @@ Benefit: This reduced temporal misalignment and created a computationally effici
 
 1. **The Anatomy of a Repetition (Exercise Signatures)**   
 By plotting the Accelerometer data, we can observe that every dynamic exercise leaves a distinct 'kinetic signature' in the form of repeating waves (peaks and valleys). Each peak represents a single complete repetition. These regular wave patterns are exactly what the machine learning model will rely on for pattern recognition. The amplitude and shape of the wave vary significantly depending on the exercise type (e.g., the vertical motion of a Squat versus the horizontal pull of a Row).
+![Anatomy of a Repetition - Squat](reports/figures/participant_A_on_squat.png)
 
-2. **Intensity Comparison (Heavy vs. Medium Weights)**   
+3. **Intensity Comparison (Heavy vs. Medium Weights)**   
 When comparing the same exercise performed with different weights (e.g., Heavy vs. Medium sets), a key insight emerges: the time interval between repetitions in a medium-weight set is shorter, indicating a faster execution speed. Conversely, a heavy set takes longer per repetition (lower frequency) and often exhibits more signal 'noise' due to muscle strain and effort. This variance confirms that our model can potentially predict the 'weight category' by analyzing movement speed and stability.
 
-3. **Participant Variance (Biomechanical Differences)**   
+4. **Participant Variance (Biomechanical Differences)**   
 Plotting the same exercise across multiple participants (A, B, C, D, E) reveals that the signals are not perfectly identical, despite it being the exact same movement. This variance is caused by natural biomechanical differences, such as arm length, execution speed, and individual fitness levels. This finding is crucial; it dictates that our model must be trained on a diverse dataset of multiple participants to ensure true generalization and avoid overfitting to a single person's unique movement style.
 
-4. **Sensor Roles: Accelerometer vs. Gyroscope**   
+5. **Sensor Roles: Accelerometer vs. Gyroscope**   
 "The visualizations clearly demonstrate the distinct roles of each sensor. The Accelerometer (top plot) captures the linear acceleration working against gravity, making it excellent for tracking the range of motion and counting repetitions. In contrast, the Gyroscope (bottom plot) records angular velocity and rotation. In exercises requiring strict wrist or torso stability, the Gyroscope signal remains relatively quiet, whereas it shows strong oscillations if the movement involves rotation. Fusing data from both sensors provides the model with a comprehensive 3D view of the physical activity, significantly boosting classification accuracy."
 
-5. **The Static State (Rest Periods)**   
+6. **The Static State (Rest Periods)**   
 During 'Rest' periods, the signals across both sensors essentially flatline, demonstrating near-total stability. There is only minimal noise present, which is typically caused by the participant's breathing or slight micro-movements. This stark visual contrast between the chaotic 'Active' states and the flat 'Rest' state ensures that classifying resting periods will be a highly accurate and straightforward task for the model.
 
 
