@@ -113,7 +113,19 @@ During 'Rest' periods, the signals across both sensors essentially flatline, dem
 
 ---
 
+## **Part 4: Outlier Detection & Handling Strategy**
 
+1. **Exploring Detection Algorithms**
+To ensure our machine learning model learns from true kinetic patterns rather than hardware glitches or noise, we experimented with three distinct outlier detection methodologies: the Interquartile Range (IQR) representing a standard statistical approach, the Local Outlier Factor (LOF) representing a density-based machine learning algorithm, and Chauvenet's Criterion representing a distribution-based statistical method.
+
+2. **The Chosen Method: Chauvenet's Criterion**
+After visual and analytical inspection, we selected Chauvenet's Criterion as our primary method. The reasoning is clear: kinetic data for a specific exercise naturally distributes around a biomechanical mean. While IQR proved too aggressive—frequently misclassifying the natural high-acceleration peaks of dynamic exercises as outliers—and LOF struggled with our wave-like periodic signals, Chauvenet's Criterion provided the perfect balance. When applied to each exercise individually, it successfully isolated genuine sensor noise without clipping the valid peaks of the movement.
+
+3. **Post-Detection Action: Handling the Outliers**
+Once the outliers were identified, we took a crucial data science approach: we did not delete the affected rows. Dropping rows would disrupt the continuous flow of time and alter our sensor's steady sampling frequency. Instead, we replaced the anomalous values with NaN (Not a Number). This action preserves the temporal structure and integrity of the dataset, preparing it perfectly for the next phase: mathematical imputation (interpolation) to smoothly fill in the gaps.
+
+
+---
 
 
 
