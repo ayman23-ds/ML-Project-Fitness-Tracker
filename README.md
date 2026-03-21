@@ -43,6 +43,8 @@ Each record in the dataset contains the following features:
    - Outlier Removal: Cleaning noise using statistical methods like Chauvenet’s Criterion.
    - Feature Engineering: Extracting meaningful patterns from raw temporal data using PCA and Frequency Domain analysis.
 
+---
+
 ## **Part 2: Data Processing & Integration**
 
 1. **Data Aggregation & Metadata Extraction**
@@ -83,6 +85,7 @@ Benefit: This reduced temporal misalignment and created a computationally effici
       - Missing Values (NaNs): 0 across all columns.
       - Feature Set: acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z, participant, label, category, set.
 
+---
 
 ## **Part 3: Data Visualization**
 
@@ -108,6 +111,7 @@ During 'Rest' periods, the signals across both sensors essentially flatline, dem
 
 ![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/a4b528f755f7da93f2c9f8002d094e3962d4b7a0/reports/figures/Rest%20(E).png)
 
+---
 
 
 
