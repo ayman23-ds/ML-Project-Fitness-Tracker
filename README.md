@@ -88,7 +88,7 @@ Benefit: This reduced temporal misalignment and created a computationally effici
 
 1. **The Anatomy of a Repetition (Exercise Signatures)**   
 By plotting the Accelerometer data, we can observe that every dynamic exercise leaves a distinct 'kinetic signature' in the form of repeating waves (peaks and valleys). Each peak represents a single complete repetition. These regular wave patterns are exactly what the machine learning model will rely on for pattern recognition. The amplitude and shape of the wave vary significantly depending on the exercise type (e.g., the vertical motion of a Squat versus the horizontal pull of a Row).
-![Anatomy of a Repetition - Squat](reports/figures/participant_A_on_squat.png)
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/a86ba727c1940c0e472ef0f5cfe164186c741347/reports/figures/participant%20A%20on%20squat.png)
 
 3. **Intensity Comparison (Heavy vs. Medium Weights)**   
 When comparing the same exercise performed with different weights (e.g., Heavy vs. Medium sets), a key insight emerges: the time interval between repetitions in a medium-weight set is shorter, indicating a faster execution speed. Conversely, a heavy set takes longer per repetition (lower frequency) and often exhibits more signal 'noise' due to muscle strain and effort. This variance confirms that our model can potentially predict the 'weight category' by analyzing movement speed and stability.
