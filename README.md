@@ -138,25 +138,30 @@ Raw sensor data is often noisy and highly dimensional. To prepare this data for 
 1. **Handling Time Gaps (Data Imputation)**
 In the previous step, outliers were replaced with NaN to maintain the data's temporal frequency. To fill these gaps without distorting the time flow we used mathematical interpolation. This method smoothly connects the points before and after the gap accurately reconstructing the natural movement curve.
 Comparison before (with NaN gaps) and after (smooth mathematical connection):
-![image alt]()
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/sample%20with%20nan.png)
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/sample%20after%20filling%20nans.png)
+
 2. **Signal Denoising (Butterworth Low-pass Filter)**
 Accelerometers typically capture high-frequency "vibrations" caused by minor hand movements or device shakes. Since human weightlifting movements are relatively slow (low frequency), we applied a Butterworth Low-pass filter (with a cutoff frequency of $1.3\text{ Hz}$). This filter successfully eliminated high-frequency noise entirely, leaving a smooth, clean kinematic wave that represents actual muscle movement.
-![image alt]()
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/before%20and%20after%20lowpass%20filter.png)
 
 3. **Dimensionality Reduction & Pattern Extraction (PCA)**
 To reduce data complexity for the model while retaining essential information, we used the PCA (Principal Component Analysis) algorithm. By analyzing the Explained Variance, we found that compressing the original six axes into just 3 Principal Components was sufficient to capture the vast majority of the kinematic variance in the data.
-![image alt]()
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/elbow%20tech%20for%20PCA.png)
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/PCAs%20plot.png)
 
 4. **Orientation Independent Features (Magnitude)**
-One of the biggest challenges with wearable sensors is varying device orientation (e.g., placing the phone upside down in a pocket). To overcome this we calculated the total magnitude of movement across the three dimensions using the Pythagorean theorem ($r = \sqrt{x^2 + y^2 + z^2}$). The result is highly robust features (acc_r and gyr_r) that measure absolute movement intensity completely independent of the device's angle or orientation.
-![image alt]()
+One of the biggest challenges with wearable sensors is varying device orientation (e.g., placing the phone upside down in a pocket). To overcome this we calculated the total magnitude of movement across the three dimensions using the Pythagorean theorem ($r = \sqrt{x^2 + y^2 + z^2}$). The result is highly robust features (acc_r and gyr_r) that measure absolute movement intensity completely independent of the device's angle or orientation
 
 5. **Unsupervised Pattern Discovery (K-Means Clustering)**
 Before training a supervised model, we used the K-Means algorithm to see if the data naturally grouped into distinct exercise categories based on movement patterns. Using the Elbow Method we determined $k=5$ as the optimal number of clusters. When plotting these clusters in a 3D space, the algorithm proved highly successful at visually separating different exercises based on their kinematic properties.
-![image alt]()
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/elbow%20tech%20for%20KMEANS.png)
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/45ec711f4b7edd5ccd02e679f84118e783999653/reports/figures/3D%20visualization%20for%20clustring.png)
 
 **Finalizing the Feature Space**
 By the end of this pipeline, the dataset became highly enriched with new predictive features. All these features were appended to the original data, including:The three PCA axes (pca_1, pca_2, pca_3).Absolute movement magnitude (acc_r, gyr_r).Temporal and frequency features (Rolling mean and standard deviation using sliding windows, and Fast Fourier Transform (FFT) features to capture exercise cadence).Cluster Labels (to provide an unsupervised baseline for the model).All these features were integrated into the final dataset, which was saved and exported as 03_data_features.pkl. The dataset is now fully prepared in its most robust form for the Predictive Modeling training phase.
+
+---
 
 
 
