@@ -214,15 +214,21 @@ Using the scipy.signal.argrelextrema algorithm, we identified the local maxima o
 - The Logic: Each identified peak represents one full range of motion (one repetition).
 - Visual Validation: As seen in the generated plots (e.g., Heavy Bench, Medium Squat), the red markers align perfectly with the crest of each wave, proving the algorithm's precision in tracking the physical cadence of the workout.
 
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/db98be1af8b5d7f64a5d55d6d4d0e6976083b689/reports/figures/medium%20dead.png)
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/db98be1af8b5d7f64a5d55d6d4d0e6976083b689/reports/figures/heavy%20bench.png)
 
 
-3. **Performance Benchmarking**
+2. **Performance Benchmarking**
 We compared the predicted counts against the ground truth (5 reps for heavy sets, 10 reps for medium sets).
 - Metric: The model achieved a Mean Absolute Error (MAE) of $1.02$.
 - Interpretation: This indicates that the system is highly reliable, with an average deviation of only one repetition per set across all exercises.
 
 
 **Final Results & Visualization**
-The Final Evaluation Bar Chart demonstrates the consistency of the counter across different categories. Whether performing a Medium Row or a Heavy Deadlift, the reps_pred (predicted) closely tracks the reps (actual).The slight variance observed in some sets is often attributed to "half-reps" or sensor noise at the very beginning or end of a set, but the core rhythmic movement is captured flawlessly.💾 Project ConclusionThis end-to-end pipeline is now complete. We have successfully built a system that:Cleans and Transforms noisy raw sensor data.Engineers Features that are independent of device orientation.Classifies Exercises with up to 99.4% accuracy (and 98.6% on entirely new users).Counts Repetitions with a high degree of precision ($MAE = 1.02$).The resulting dataset, 03_data_features.pkl, and the counting logic provide a production-ready foundation for a real-time fitness monitoring application.
+The Final Evaluation Bar Chart demonstrates the consistency of the counter across different categories. Whether performing a Medium Row or a Heavy Deadlift, the reps_pred (predicted) closely tracks the reps (actual).The slight variance observed in some sets is often attributed to "half-reps" or sensor noise at the very beginning or end of a set, but the core rhythmic movement is captured flawlessly.
+![image alt](https://github.com/ayman23-ds/ML-Project-Fitness-Tracker/blob/db98be1af8b5d7f64a5d55d6d4d0e6976083b689/reports/figures/Evaluation.png)
+
+## **Project Conclusion**
+This end-to-end pipeline is now complete. We have successfully built a system that:Cleans and Transforms noisy raw sensor data.Engineers Features that are independent of device orientation.Classifies Exercises with up to 99.4% accuracy (and 98.6% on entirely new users).Counts Repetitions with a high degree of precision ($MAE = 1.02$).The resulting dataset, 03_data_features.pkl, and the counting logic provide a production-ready foundation for a real-time fitness monitoring application.
 
 
