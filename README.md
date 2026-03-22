@@ -162,8 +162,40 @@ Before training a supervised model, we used the K-Means algorithm to see if the 
 By the end of this pipeline, the dataset became highly enriched with new predictive features. All these features were appended to the original data, including:The three PCA axes (pca_1, pca_2, pca_3).Absolute movement magnitude (acc_r, gyr_r).Temporal and frequency features (Rolling mean and standard deviation using sliding windows, and Fast Fourier Transform (FFT) features to capture exercise cadence).Cluster Labels (to provide an unsupervised baseline for the model).All these features were integrated into the final dataset, which was saved and exported as 03_data_features.pkl. The dataset is now fully prepared in its most robust form for the Predictive Modeling training phase.
 
 ---
+## **Part 6: Predictive Modeling & Algorithm Selection**
+With a rich dataset of engineered features, the objective of this phase was to train and evaluate various machine learning algorithms to accurately classify fitness exercises. We focused not only on raw accuracy but also on computational efficiency and the model's ability to generalize to new, unseen users.
 
+**Modeling Methodology & Key Findings**
 
+1. **Strategic Data Splitting & Feature Subsets**
+To establish a reliable baseline, the data was initially divided using a random stratified split (75% training, 25% testing) to maintain the exact proportion of each exercise class.
+To understand the predictive power of our feature engineering pipeline, we divided the features into progressive sets:
+  - Set 1: Basic raw sensor data.
+  - Set 2: Basic + Magnitude (Square) + PCA features.
+  - Set 3: Set 2 + Temporal features.
+  - Set 4: Set 3 + Frequency + Cluster features (The Comprehensive Set).
+
+2. **Forward Feature Selection: The "Dream Team" of Features**
+Instead of blindly feeding all features into the models we utilized a Forward Feature Selection algorithm using a Decision Tree to identify the most impactful variables.
+The Result: The performance curve demonstrated a steep climb, jumping from an 89% accuracy with just one feature to over 99% accuracy using only the top 4 features. The curve plateaued afterward, proving that an ultra-lightweight, highly accurate model could be deployed using just a handful of carefully selected features (such as pca_1, magnitude acc_r, and specific frequency data), drastically reducing computational overhead.
+
+3. **Algorithm Benchmarking (Grid Search)**
+We conducted a comprehensive Grid Search to evaluate five distinct algorithms (Neural Network, Random Forest, K-Nearest Neighbors, Decision Tree, and Naive Bayes) across all feature sets.
+- The Results: The Grouped Bar Chart revealed that Random Forest (RF) and Neural Networks (NN) consistently outperformed the others.
+- As expected, performance scaled up as we fed the models richer feature sets. Random Forest trained on Feature Set 4 (and the Selected Features subset) emerged as the absolute winner.
+
+**Model Evaluation & Real World Generalization**
+
+1. **Baseline Evaluation (Random Split)**
+The best performing model (Random Forest) achieved an exceptional Accuracy of 99.4% on the random test set. The resulting Confusion Matrix showed a near-perfect diagonal alignment, indicating that the model easily distinguishes between complex movements like squats, deadlifts, and bench presses with practically zero overlap.
+
+2. **The Ultimate Test: Participant-Based Split (Leave-One-Subject-Out)**
+A common pitfall in wearable AI is that models "memorize" the specific movement quirks of the users in the training data, failing when a new person uses the device. To test true generalization, we restructured our split: we trained the models on all participants except Participant A, and used Participant A's data exclusively as the test set.
+
+The Result: The complex model (Neural Network using the Selected Features) achieved an astonishing Accuracy of 98.6% on this entirely unseen user. The Confusion Matrix for Participant A remained heavily concentrated on the true labels, with only microscopic misclassifications.
+
+**Conclusion**
+This final test definitively proves that our model did not memorize the users; it successfully learned the underlying biomechanical patterns of the exercises. We now have a highly generalized, incredibly accurate (98.6% - 99.4%), and computationally efficient predictive model ready for deployment.
 
 
 
