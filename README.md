@@ -7,6 +7,16 @@ This project focuses on building an end-to-end Machine Learning pipeline that tr
 
 This project aims to build a complete machine learning pipeline. The process begins with reading, cleaning, and processing raw data from CSV files, followed by visualizing the data as time series to understand its underlying patterns. Advanced outlier detection techniques, including Chauvenet’s Criterion and Local Outlier Factor (LOF), are then applied to improve data quality. After that, a comprehensive feature engineering phase is performed using techniques such as lowpass filters, Principal Component Analysis (PCA), and clustering. For predictive modeling, several machine learning algorithms including Naive Bayes, Support Vector Machines (SVM), Random Forests, and Neural Networks are trained and compared to achieve high prediction accuracy. Finally, the project concludes with the development of a custom algorithm designed to automatically and accurately count movement repetitions.
 
+##  **Tools & Technologies**
+
+This project leverages a robust stack of data science and machine learning tools within the Python ecosystem:
+
+* **Programming Language:** Python 3.x
+* **Development Environment:** VS Code (Visual Studio Code), Jupyter Notebooks
+* **Data Manipulation & Analysis:** `pandas`, `numpy`
+* **Signal Processing (Time-Series):** `scipy` (Utilized for Butterworth Low-pass filters and peak detection algorithms)
+* **Machine Learning & Predictive Modeling:** `scikit-learn` (PCA, Random Forest, SVM, K-Means Clustering, Neural Networks)
+* **Data Visualization:** `matplotlib`, `seaborn`
 ---
 
 ## **Part 1: Dataset MetaMotion Physical Activity Analysis**
