@@ -1,5 +1,8 @@
 # ML-Project-Fitness-Tracker
 
+## **Project Overview**
+This project focuses on building an end-to-end Machine Learning pipeline that transforms raw IMU sensor data (Accelerometer & Gyroscope) into a smart fitness assistant. The system can automatically classify weightlifting exercises and precisely count repetitions with medical-grade accuracy.
+
 ## **Description**    
 
 This project aims to build a complete machine learning pipeline. The process begins with reading, cleaning, and processing raw data from CSV files, followed by visualizing the data as time series to understand its underlying patterns. Advanced outlier detection techniques, including Chauvenet’s Criterion and Local Outlier Factor (LOF), are then applied to improve data quality. After that, a comprehensive feature engineering phase is performed using techniques such as lowpass filters, Principal Component Analysis (PCA), and clustering. For predictive modeling, several machine learning algorithms including Naive Bayes, Support Vector Machines (SVM), Random Forests, and Neural Networks are trained and compared to achieve high prediction accuracy. Finally, the project concludes with the development of a custom algorithm designed to automatically and accurately count movement repetitions.
@@ -231,4 +234,60 @@ The Final Evaluation Bar Chart demonstrates the consistency of the counter acros
 ## **Project Conclusion**
 This end-to-end pipeline is now complete. We have successfully built a system that:Cleans and Transforms noisy raw sensor data.Engineers Features that are independent of device orientation.Classifies Exercises with up to 99.4% accuracy (and 98.6% on entirely new users).Counts Repetitions with a high degree of precision ($MAE = 1.02$).The resulting dataset, 03_data_features.pkl, and the counting logic provide a production-ready foundation for a real-time fitness monitoring application.
 
+---
+
+## 📂 **Repository Structure**
+
+```
+AI Fitness Tracker Project
+project-root/
+│
+├── data/                                 # Data storage folder
+│   ├── final/                            # Final processed datasets ready for modeling
+│   │   └── 03_data_features.pkl          # Final featured dataset
+│   │
+│   ├── interim/                          # Intermediate processed datasets
+│   │   ├── 01_data_processed.pkl         # Initially cleaned dataset
+│   │   ├── 02_outliers_removed_chauvenet.pkl  # Dataset after outlier removal
+│   │   └── 03_data_features.pkl          # Dataset after feature engineering
+│   │
+│   └── raw/                              # Raw original data
+│       └── MetaMotion.zip                # Raw zipped source dataset
+│
+├── reports/                              # Reports and generated outputs
+│   ├── figures/                          # Visualizations and plots
+│   └── placeholder                       
+│
+├── src/                                  # Source code of the project
+│   ├── data/
+│   │   └── make_dataset.py               # Script for loading and preparing dataset
+│   │
+│   ├── features/
+│   │   ├── DataTransformation.py         # General data transformation utilities
+│   │   ├── FrequencyAbstraction.py       # Frequency domain feature extraction
+│   │   ├── TemporalAbstraction.py        # Time domain feature extraction
+│   │   ├── build_features.py             # Main feature engineering pipeline
+│   │   ├── count_repetitions.py          # Repetition counting logic
+│   │   └── remove_outliers.py            # Outlier detection and removal
+│   │
+│   ├── models/
+│   │   ├── LearningAlgorithms.py         # Machine learning algorithms implementation
+│   │   └── train_model.py                # Model training script  
+│   │
+│   └── visualization/
+│       └── visualize.py                  # Visualization and plotting script
+│
+└── README.md                             # Project overview and instructions
+```
+---
+
+## About Me
+
+I am a Master's student in Computer Engineering at the University of Pavia, specializing in Machine Learning and Data Science. I am passionate about building intelligent systems that extract insights from data and solve real-world problems.
+
+I have strong hands on experience in data analysis, feature engineering, and machine learning modeling. I work with Python and libraries such as Pandas, NumPy, Scikit-learn, and PyTorch to build predictive models and analyze complex datasets.
+
+I have developed end-to-end ML workflows, including data preprocessing, feature extraction, model training, evaluation, and optimization. My work focuses on applying machine learning techniques to real datasets, improving model performance, and understanding the underlying data patterns.
+
+I am continuously improving my skills in Deep Learning, model optimization, and data driven decision making, aiming to become a professional Machine Learning Engineer / Data Scientist.
 
