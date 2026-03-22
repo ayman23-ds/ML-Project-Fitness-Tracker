@@ -286,9 +286,7 @@ This project is licensed under Dave Ebbelaar.
 https://academy.datalumina.com/
 
 ## About Me
-
-I am a Master's student in Computer Engineering at the University of Pavia, specializing in Machine Learning and Data Science. I am passionate about building intelligent systems that extract insights from data and solve real-world problems.
-
+I am a **Machine Learning and Data Science Engineer** with a strong interest in building intelligent systems that extract insights from data and solve real-world problems.
 I have strong hands on experience in data analysis, feature engineering, and machine learning modeling. I work with Python and libraries such as Pandas, NumPy, Scikit-learn, and PyTorch to build predictive models and analyze complex datasets.
 
 I have developed end-to-end ML workflows, including data preprocessing, feature extraction, model training, evaluation, and optimization. My work focuses on applying machine learning techniques to real datasets, improving model performance, and understanding the underlying data patterns.
